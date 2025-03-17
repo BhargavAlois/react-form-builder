@@ -1,3 +1,11 @@
+## [1.3.1](https://github.com/aman162001/react-form-builder/compare/v1.3.0...v1.3.1) (2025-03-17)
+
+
+### Bug Fixes
+
+* fix ([962243b](https://github.com/aman162001/react-form-builder/commit/962243b178e2abe7607a2f9dbf71a55420f020f6))
+* fixed issue related to options in multichoice ([844a866](https://github.com/aman162001/react-form-builder/commit/844a8660c23a445e05271d98d021d4d2d1cf644c))
+
 # [1.3.0](https://github.com/aman162001/react-form-builder/compare/v1.2.4...v1.3.0) (2025-03-10)
 
 
