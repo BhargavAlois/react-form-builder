@@ -124,11 +124,11 @@ const MultipleChoice: React.FC<OptionsProps> = ({
                       className="form-check-input"
                       type="checkbox"
                       checked={option.isCorrect || false}
-                      onChange={(e) =>
+                      onChange={(e) => {
                         onOptionChange?.(index, {
                           ...option,
                           isCorrect: e.target.checked,
-                        })
+                        })}
                       }
                     />
                   </div>
@@ -150,7 +150,7 @@ const MultipleChoice: React.FC<OptionsProps> = ({
                   />
                   <button
                     className="btn btn-danger btn-sm"
-                    onClick={() => onRemoveOption?.(index)}
+                    onClick={(e) => {e.preventDefault(), onRemoveOption?.(index)}}
                     disabled={options.length <= 1}>
                     ✕
                   </button>
@@ -255,7 +255,7 @@ const Checkbox: React.FC<OptionsProps> = ({
                   />
                   <button
                     className="btn btn-danger btn-sm"
-                    onClick={() => onRemoveOption?.(index)}
+                    onClick={(e) => {e.preventDefault(), onRemoveOption?.(index)}}
                     disabled={options.length <= 1}>
                     ✕
                   </button>
@@ -264,7 +264,7 @@ const Checkbox: React.FC<OptionsProps> = ({
             ))}
           </tbody>
         </table>
-        <button className="btn btn-primary btn-sm" onClick={onAddOption}>
+        <button className="btn btn-primary btn-sm" onClick={(e) =>  {e.preventDefault(), onAddOption?.()}}>
           Add Option
         </button>
       </div>
@@ -356,7 +356,7 @@ const Dropdown: React.FC<OptionsProps> = ({
                   />
                   <button
                     className="btn btn-danger btn-sm"
-                    onClick={() => onRemoveOption?.(index)}
+                    onClick={(e) => {e.preventDefault(), onRemoveOption?.(index)}}
                     disabled={options.length <= 1}>
                     ✕
                   </button>
@@ -365,7 +365,7 @@ const Dropdown: React.FC<OptionsProps> = ({
             ))}
           </tbody>
         </table>
-        <button className="btn btn-primary btn-sm" onClick={onAddOption}>
+        <button className="btn btn-primary btn-sm" onClick={(e) => {e.preventDefault(), onAddOption?.()}}>
           Add Option
         </button>
       </div>
